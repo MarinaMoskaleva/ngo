@@ -1,5 +1,7 @@
 <template>
+  <div class="main-page">
   <Test />
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,3 +12,12 @@ export default Vue.extend({
 })
 
 </script>
+
+<style scoped>
+  .main-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 16px);
+  }
+</style>

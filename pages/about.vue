@@ -1,18 +1,12 @@
 <template>
-  <div>
-    <div class='container'>
-      <p>About</p>
-    </div>
+  <div class="container">
+    <About />
   </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-      testData: ''
-    }
-  }
+
 };
 </script>
 
@@ -22,5 +16,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
 </style>

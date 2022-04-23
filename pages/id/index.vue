@@ -1,7 +1,6 @@
 <template>
   <div>
-  <p>Index page</p>
-
+    <p>Index page</p>
   </div>
 </template>
 
@@ -11,6 +10,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
