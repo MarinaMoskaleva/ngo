@@ -18,6 +18,5 @@ export default Vue.extend({
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 16px);
   }
 </style>
