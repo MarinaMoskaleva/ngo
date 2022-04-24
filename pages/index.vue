@@ -1,5 +1,5 @@
 <template>
-  <div class="main-page">
+  <div class="container">
   <Test />
   </div>
 </template>
@@ -14,9 +14,14 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-  .main-page{
+  .container{
+    background: url('~/static/background.jpg') center no-repeat;
+    height: 100vh;
+    background-size: cover;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 </style>

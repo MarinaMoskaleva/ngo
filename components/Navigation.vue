@@ -1,10 +1,10 @@
 <template>
     <nav class='navigation'>
         <Logo />
-        <nuxt-link to='/'>Main</nuxt-link>
-        <nuxt-link to='/about'>About page</nuxt-link>
-        <nuxt-link to='/id'>ID page</nuxt-link>
-        <nuxt-link to='/id/123'>ID 123</nuxt-link>
+        <nuxt-link class='link' to='/'>Main</nuxt-link>
+        <nuxt-link class='link' to='/about'>About page</nuxt-link>
+        <button class='button'>Enter</button>
+        <!--<Modal />-->
     </nav>
 </template>
 
@@ -31,5 +31,24 @@
         justify-content: space-between;
         background: lightblue;
         box-sizing: border-box;
+        background: rgba(255,255,255,0.2);
+    }
+    .button{
+        width: 100px;
+        background: white;
+        padding: 10px 15px;
+        color: black;
+        border: 1px solid black;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: .3s;
+    }
+    .button:hover{
+        background: black;
+        color: white;
+        transition: .3s;
+    }
+    .link{
+        color: black;
     }
 </style>

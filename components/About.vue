@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div>
         <h1>Тестовое приложение</h1>
         <h2>Страница About</h2>
     </div>
@@ -12,7 +12,5 @@
 </script>
 
 <style scoped>
-.main{
-    align-text: left;
-}
+
 </style>

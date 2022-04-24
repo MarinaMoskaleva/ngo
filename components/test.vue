@@ -1,5 +1,6 @@
 <template>
-  <div class='container'>
+  <div class='main'>
+    <h1>Nuxt js</h1>
     <p>Main page</p>
   </div>
 </template>
@@ -15,10 +16,10 @@ export default {
 </script>
 
 <style scoped>
-  .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+  .main{
+    padding: 59px 90px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    text-align: left;
   }
 </style>

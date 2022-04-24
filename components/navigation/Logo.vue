@@ -1,6 +1,6 @@
 <template>
     <h1>
-        I am navigation
+        NGO Project
     </h1>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
