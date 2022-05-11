@@ -1,11 +1,10 @@
 <template>
     <nav class='navigation'>
         <Logo :title="logoTitle"/>
-        <nuxt-link class='link' to='/'>Main</nuxt-link>
-        <nuxt-link class='link' to='/about'>About page</nuxt-link>
-        <button v-if="showBtn1" class='button'>{{text}}</button>
-        <button v-else-if="showBtn2" class='button'>Я тест 1</button>
-        <button v-else class='button'>А я тест 2</button>
+        <nuxt-link v-for='item in linkArray' class='link' :to='item.to' :key='item.title'>
+          {{item.title}}
+        </nuxt-link>
+        <button class='button'>{{text}}</button>
         <Modal v-show='false'/>
     </nav>
 </template>
@@ -20,8 +19,11 @@
           return {
             text: 'Enter',
             logoTitle: 'НКО-проект',
-            showBtn1: false,
-            showBtn2: false,
+            linkArray: [
+              {to:'/', title:'Main'},
+              {to:'/about', title:'About page'},
+            ]
+
           }
         }
     }
