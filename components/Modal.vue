@@ -1,24 +1,38 @@
 <template>
     <article class='modal-wrap'>
         <div class='container'>
-            <span class='icon-close' />
+            <span class='icon-close' @click="$emit('closeModal', {email})"/>
             <h1>Вход</h1>
-            <label class='label'>
-                Email
-                <input class='input' type='email'>
-            </label>
-            <label class='label'>
-                Пароль
-                <input class='input' type='password'>
-                <button class='button'>Войти</button>
-            </label>
+            <form>
+              <label class='label'>
+                  Email
+                  <input class='input' type='email' v-model='email' @keyup.enter="handleKeyUp">
+              </label>
+              <label class='label'>
+                  Пароль
+                  <input class='input' type='password'>
+                  <button class='button' type="submit" @click.prevent="handleButtonClick">Войти</button>
+              </label>
+            </form>
         </div>
     </article>
 </template>
 
 <script>
     export default {
-        
+        data() {
+          return {
+            email: '',
+          }
+        },
+        methods: {
+          handleButtonClick(event) {
+            console.log('clicked');
+          },
+          handleKeyUp(event){
+            console.log(event, 'key pressed');
+          }
+        }
     }
 </script>
 

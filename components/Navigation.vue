@@ -4,8 +4,8 @@
         <nuxt-link v-for='item in linkArray' class='link' :to='item.to' :key='item.title'>
           {{item.title}}
         </nuxt-link>
-        <button class='button'>{{text}}</button>
-        <Modal v-show='false'/>
+        <button class='button' @click="toggleModal('Hello world', $event)">{{text}}</button>
+        <Modal v-show='showModal' @closeModal='toggleModal'/>
     </nav>
 </template>
 
@@ -22,8 +22,16 @@
             linkArray: [
               {to:'/', title:'Main'},
               {to:'/about', title:'About page'},
-            ]
-
+            ],
+            showModal: false,
+            counter: 0,
+          }
+        },
+        methods: {
+          toggleModal(data, event){
+            console.log('data',data);
+            console.log('event',event);
+            this.showModal = !this.showModal;
           }
         }
     }
