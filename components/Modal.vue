@@ -8,10 +8,12 @@
                   Email
                   <input class='input' type='email' v-model='email' @keyup.enter="handleKeyUp">
               </label>
+              <p>{{reverse}}</p>
               <label class='label'>
                   Пароль
                   <input class='input' type='password'>
-                  <button class='button' type="submit" @click.prevent="handleButtonClick">Войти</button>
+                  <!--<button class='button' type="submit" @click.prevent="handleButtonClick">Войти</button>-->
+                  <button class='button' type="submit" @click="$router.push('/about')">Войти</button>
               </label>
             </form>
         </div>
@@ -23,14 +25,21 @@
         data() {
           return {
             email: '',
+            testData: 'hello',
           }
         },
+
         methods: {
           handleButtonClick(event) {
             console.log('clicked');
           },
           handleKeyUp(event){
             console.log(event, 'key pressed');
+          }
+        },
+        computed: {
+          reverse(){
+            return this.email.split('').reverse().join('');
           }
         }
     }

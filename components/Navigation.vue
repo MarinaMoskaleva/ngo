@@ -1,11 +1,16 @@
 <template>
     <nav class='navigation'>
         <Logo :title="logoTitle"/>
-        <nuxt-link v-for='item in linkArray' class='link' :to='item.to' :key='item.title'>
-          {{item.title}}
+        <nuxt-link
+          v-for="item in routes"
+          class='link'
+          :to='item.path'
+          :key='item.name'
+        >
+          {{item.name}}
         </nuxt-link>
         <button class='button' @click="toggleModal('Hello world', $event)">{{text}}</button>
-        <Modal v-show='showModal' @closeModal='toggleModal'/>
+        <Modal v-if='showModal' @closeModal='toggleModal'/>
     </nav>
 </template>
 
@@ -33,7 +38,17 @@
             console.log('event',event);
             this.showModal = !this.showModal;
           }
-        }
+        },
+        created(){
+          if(this.$route.query.showModal){
+            this.showModal = true;
+          }
+        },
+        computed: {
+          routes(){
+            return this.$router.options.routes.filter(item => !item.path.includes((':')))
+          }
+        },
     }
 </script>
 
