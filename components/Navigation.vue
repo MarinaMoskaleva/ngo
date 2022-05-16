@@ -16,6 +16,7 @@
 
 <script>
     import Logo from './navigation/Logo'
+    const DYNAMIC_ROUTE_MARKER = ":"
     export default {
         components: {
             Logo
@@ -46,7 +47,7 @@
         },
         computed: {
           routes(){
-            return this.$router.options.routes.filter(item => !item.path.includes((':')))
+            return this.$router.options.routes.filter(item => !item.path.includes((DYNAMIC_ROUTE_MARKER)))
           }
         },
     }

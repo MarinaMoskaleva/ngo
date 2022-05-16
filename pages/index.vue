@@ -1,16 +1,25 @@
 <template>
   <div class="container">
-  <Test />
+    <UserCard v-for="guest in guests" :guest="guest" :key="guest.attributes.slug"/>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import axios from '@/plugins/axios'
 
-export default Vue.extend({
-  name: 'IndexPage'
-})
-
+export default {
+  data() {
+  return {
+    guests: []
+  }
+  },
+  created() {
+    axios.get("/api/guests").then(res => {
+      this.guests = res.data.data;
+      console.log(res.data.data)
+    })
+  }
+};
 </script>
 
 <style scoped>
