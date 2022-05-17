@@ -13,24 +13,11 @@ export default {
     guests: []
   }
   },
-  created() {
-    axios.get("/api/guests").then(res => {
-      this.guests = res.data.data;
-      console.log(res.data.data)
+  asyncData(){
+    return axios.get("/guests").then(res => {
+      const guests = res.data.data;
+      return { guests }
     })
   }
 };
 </script>
-
-<style scoped>
-  .container{
-    background: url('~/static/background.jpg') center no-repeat;
-    height: 100vh;
-    background-size: cover;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-</style>

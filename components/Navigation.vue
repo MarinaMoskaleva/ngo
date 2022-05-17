@@ -1,6 +1,8 @@
 <template>
     <nav class='navigation'>
+    <nuxt-link to="/">
         <Logo :title="logoTitle"/>
+      </nuxt-link>
         <nuxt-link
           v-for="item in routes"
           class='link'

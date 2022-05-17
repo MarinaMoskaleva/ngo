@@ -17,12 +17,11 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/normalize.css',
-    '@/assets/style.css'
+    '@/assets/normalize.css'
   ],
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:1337'
+    baseUrl: process.env.BASE_URL || 'http://localhost:1337/api'
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

@@ -1,12 +1,12 @@
 !<template>
-  <article class="card">
+  <nuxt-link :to="`/id/${guest.id}`" class="card">
     <img class="image" :src="guest.attributes.image">
     <div class="text">
       <h2>{{guest.attributes.name}}</h2>
       <em class="email">{{guest.attributes.email}}</em>
       <p>{{guest.attributes.country}}</p>
     </div>
-  </article>
+  </nuxt-link>
 </template>
 
 <script>
